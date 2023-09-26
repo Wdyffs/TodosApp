@@ -1,10 +1,10 @@
-import { Button } from 'antd'
 import './App.css'
+import Todo from './components/Todo/Todo'
 
 function App() {
   return (
     <div>
-      <Button type='primary'>Button</Button>
+      <Todo todo={{id: '2xck', text: 'Todo text', isCompleted: false}} deleteTodo={() => {}} toggleTodo={() => {}}/>
     </div>
   )
 }
