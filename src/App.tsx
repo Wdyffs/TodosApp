@@ -1,4 +1,6 @@
+import { Space } from 'antd';
 import './App.css'
+import AddTodo from './components/AddTodo/AddTodo';
 import TodoList from './components/TodoList/TodoList'
 import { ITodo } from './models/todo.mode';
 
@@ -27,9 +29,10 @@ const mockTodoList: ITodo[] = [
 
 function App() {
   return (
-    <div>
+    <Space direction='vertical' size='middle'>
+      <AddTodo addTodo={(v: any) => {}}/>
       <TodoList list={mockTodoList} toggleTodo={() => {}} deleteTodo={() => {}}/>
-    </div>
+    </Space>
   )
 }
 
