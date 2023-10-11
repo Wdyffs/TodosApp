@@ -44,6 +44,9 @@ describe('Todo reducer', () => {
 
         const allFilterRes = todosReducer(activeFilterRes, {type: ETodoAction.SET_ALL_FILTER});
         expect(allFilterRes.filter).toBe('all');
+
+        const completedFilterRes = todosReducer(allFilterRes, {type: ETodoAction.SET_COMPLETED_FILTER});
+        expect(completedFilterRes.filter).toBe('completed');
     });
 
 })

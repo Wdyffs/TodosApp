@@ -7,10 +7,11 @@ export enum ETodoAction {
     TOGGLE_TODO = 'toggle_todo',
 
     SET_ACTIVE_FILTER = 'set_active_filter',
-    SET_ALL_FILTER = 'set_all_filter'
+    SET_ALL_FILTER = 'set_all_filter',
+    SET_COMPLETED_FILTER = 'set_completed_filter'
 }
 
-type Filter = 'all' | 'active';
+type Filter = 'all' | 'active' | 'completed';
 
 interface ITodoAction {
     type: ETodoAction,
@@ -35,7 +36,7 @@ export const todosReducer = (state: ITodosState, action: ITodoAction) => {
         case ETodoAction.TOGGLE_TODO:
             return {
                 ...state, todos: state.todos.map(todo => {
-                    const toggledTodo = {...todo};
+                    const toggledTodo = { ...todo };
                     if (todo.id == action.payload) {
                         toggledTodo.isCompleted = !todo.isCompleted;
                     }
@@ -50,6 +51,10 @@ export const todosReducer = (state: ITodosState, action: ITodoAction) => {
         case ETodoAction.SET_ALL_FILTER:
             if (state.filter == 'all') return state;
             return { ...state, filter: 'all' as const };
+
+        case ETodoAction.SET_COMPLETED_FILTER:
+            if (state.filter == 'completed') return state;
+            return { ...state, filter: 'completed' as const };
 
         default:
             return state;
