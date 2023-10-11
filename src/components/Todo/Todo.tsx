@@ -1,5 +1,5 @@
 import { Button, Checkbox } from "antd";
-import { ITodo } from "../../models/todo.mode";
+import { ITodo } from "../../models/todo.model";
 
 type Props = {
     todo: ITodo,

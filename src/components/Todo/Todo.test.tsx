@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Todo from "./Todo"
-import { ITodo } from '../../models/todo.mode';
+import { ITodo } from '../../models/todo.model';
 
 const mockTodo: ITodo = {
     id: '1xe',

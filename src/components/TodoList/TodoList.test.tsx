@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import '../../test/__mocks__/jestGlobalMocks';
 import TodoList from "./TodoList";
-import { ITodo } from "../../models/todo.mode";
+import { ITodo } from "../../models/todo.model";
 
 const mockTodoList: ITodo[] = [
     {

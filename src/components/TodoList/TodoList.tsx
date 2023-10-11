@@ -1,5 +1,5 @@
 import { List } from "antd";
-import { ITodo } from "../../models/todo.mode";
+import { ITodo } from "../../models/todo.model";
 import Todo from "../Todo/Todo";
 
 type Props = {
