@@ -6,6 +6,8 @@ export enum ETodoAction {
     REMOVE_TODO = 'remove_todo',
     TOGGLE_TODO = 'toggle_todo',
 
+    REMOVE_COMPLETED = 'remove_completed',
+
     SET_ACTIVE_FILTER = 'set_active_filter',
     SET_ALL_FILTER = 'set_all_filter',
     SET_COMPLETED_FILTER = 'set_completed_filter'
@@ -43,6 +45,9 @@ export const todosReducer = (state: ITodosState, action: ITodoAction) => {
                     return toggledTodo;
                 })
             };
+
+        case ETodoAction.REMOVE_COMPLETED:
+            return {...state, todos: state.todos.filter(todo => !todo.isCompleted)};
 
         case ETodoAction.SET_ACTIVE_FILTER:
             if (state.filter == 'active') return state;

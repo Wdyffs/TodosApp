@@ -49,4 +49,13 @@ describe('Todo reducer', () => {
         expect(completedFilterRes.filter).toBe('completed');
     });
 
+    test('Remove completed action works correct', () => {
+        const res1 = addTodo(initialState, 'text1');
+        const res2 = addTodo(res1, 'text2');
+        const res3 = todosReducer(res2, {type: ETodoAction.TOGGLE_TODO, payload: res2.todos[1].id});
+        const res4 = todosReducer(res3, {type: ETodoAction.REMOVE_COMPLETED});
+        expect(res4.todos.length).toBe(1);
+        expect(res4.todos[0].isCompleted).not.toBeTruthy();
+    })
+
 })
