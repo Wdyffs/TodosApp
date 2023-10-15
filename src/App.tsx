@@ -17,7 +17,7 @@ function App() {
         return state.todos.filter(todo => !todo.isCompleted);
       case 'completed':
         return state.todos.filter(todo => todo.isCompleted);
-    };
+    }
   }, [state.filter, state.todos])
 
   const addTodo = (text: string) => dispatch({ type: ETodoAction.ADD_TODO, payload: text });

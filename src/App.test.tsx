@@ -5,7 +5,7 @@ import App from "./App";
 
 
 function creaeListOfTodos(todos: string[], input: HTMLInputElement, btn: HTMLButtonElement) {
-    for (let todo of todos) {
+    for (const todo of todos) {
         fireEvent.change(input, { target: { value: todo } });
         fireEvent.click(btn);
     }

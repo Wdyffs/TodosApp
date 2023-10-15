@@ -29,8 +29,7 @@ export const todosReducer = (state: ITodosState, action: ITodoAction) => {
     switch (action.type) {
 
         case ETodoAction.ADD_TODO:
-            const newTodo: ITodo = { id: uuidv4(), text: action.payload!, isCompleted: false };
-            return { ...state, todos: [...state.todos, newTodo] };
+            return { ...state, todos: [...state.todos, { id: uuidv4(), text: action.payload!, isCompleted: false }] };
 
         case ETodoAction.REMOVE_TODO:
             return { ...state, todos: state.todos.filter(todo => todo.id != action.payload) };

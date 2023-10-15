@@ -15,7 +15,7 @@ const AddTodo = ({ addTodo }: Props) => {
             setError(true);
         } else {
             addTodo(text);
-        };
+        }
         setText('');
     };
 

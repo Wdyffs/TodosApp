@@ -3,6 +3,11 @@ import '@testing-library/jest-dom';
 import Todo from "./Todo"
 import { ITodo } from '../../models/todo.model';
 
+type TodoProps = {
+    todo: ITodo,
+    deleteTodo: (id: string) => void;
+    toggleTodo: (id: string) => void;
+}
 const mockTodo: ITodo = {
     id: '1xe',
     text: 'Create a Project',
@@ -13,8 +18,8 @@ const toggleTodo = jest.fn();
 const deleteTodo = jest.fn();
 
 describe('Todo item', () => {
-    let rerenderRef: (ui: React.ReactElement<any, string | React.JSXElementConstructor<any>>) => void;
-
+    let rerenderRef: (ui: React.ReactElement<TodoProps, string | React.JSXElementConstructor<TodoProps>>) => void;
+    
     beforeEach(() => {
         const {rerender} = render(<Todo todo={mockTodo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />);
         rerenderRef =  rerender;
