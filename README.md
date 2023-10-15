@@ -39,6 +39,6 @@ To run specific component test execute:
  ### Deploy
 
  - **Tool**
-   - GitHub Pages [TodoApp](https://wdyffs.github.io/TodosApp/)
+   - GitHub Pages [Link](https://wdyffs.github.io/TodosApp/)
 
 
