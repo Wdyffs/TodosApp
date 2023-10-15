@@ -34,5 +34,11 @@ To run specific component test execute:
    - _React Testing library_
 - **Build tool**
    - _Vite_
+ ---
+
+ ### Deploy
+
+ - **Tool**
+   - GitHub Pages [TodoApp](https://wdyffs.github.io/TodosApp/)
 
 
