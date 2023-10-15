@@ -9,7 +9,9 @@ type Props = {
 
 const Todo = ({todo, deleteTodo, toggleTodo}: Props) => {
     return <>
-        <Checkbox onChange={() => toggleTodo(todo.id)} checked={todo.isCompleted} style={{wordWrap: 'break-word', gap: '10px', textAlign: 'start', textDecoration: todo.isCompleted ? 'line-through' : 'none', fontSize: '1.3rem'}}>
+        <Checkbox onChange={() => toggleTodo(todo.id)} 
+            checked={todo.isCompleted} 
+            style={{textDecoration: todo.isCompleted ? 'line-through' : 'none', wordWrap: 'break-word', gap: '10px', textAlign: 'start', fontSize: '1.3rem'}}>
             {todo.text}
         </Checkbox>
         <Button onClick={() => deleteTodo(todo.id)} danger type='primary'>Remove</Button>
