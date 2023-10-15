@@ -30,11 +30,11 @@ function App() {
 
   return (
     <Space direction='vertical' size='middle' style={{width: '100%'}}>
-      <h1>Manage todos</h1>
+      <h1 style={{marginTop: '20px', color: '#505050'}}>Manage todos</h1>
       <AddTodo addTodo={addTodo} />
       <TodoList list={todoList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '5px', flexWrap: 'wrap'}}>
-        <span style={{marginLeft: '10px'}}>{countItemsLeft} items left</span>
+        <span style={{marginLeft: '10px', color: '#505050'}}>{countItemsLeft} items left</span>
         <Space>
           <Button onClick={setAllFilter} type={state.filter === 'all' ? 'primary' : 'default'}>All</Button>
           <Button onClick={setActiveFilter} type={state.filter === 'active' ? 'primary' : 'default'}>Active</Button>
