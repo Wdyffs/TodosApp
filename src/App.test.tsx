@@ -39,13 +39,13 @@ describe('App testing', () => {
     test('Should display todos, that has been added', () => {
         const todos = screen.getAllByText(/text_./);
         expect(todos.length).toBe(3);
-    })
+    });
 
     test('Should display "all" todos on startup', () => {
         setCompletedFirstTodo();
 
         expect(screen.queryAllByText(/text_./).length).toBe(3);
-    })
+    });
 
     test('Should display correct todos after switching filters', () => {
         setCompletedFirstTodo();
@@ -82,7 +82,7 @@ describe('App testing', () => {
 
     test('Should display "clear completed" button', () => {
         expect(screen.getByText(/clear completed/i)).toBeInTheDocument();
-    })
+    });
 
     test('Should clear completed todos on click "clear todo" button', () => {
         setCompletedFirstTodo();
@@ -91,6 +91,12 @@ describe('App testing', () => {
         fireEvent.click(clearCompleteBtn);
 
         expect(screen.queryAllByText(/text_./).length).toBe(2);
+    });
+
+    test('Should show correct left items number', () => {
+        expect(screen.getByText(/3 items left/)).toBeInTheDocument();
+        setCompletedFirstTodo();
+        expect(screen.getByText(/2 items left/)).toBeInTheDocument();
     })
 
 });
