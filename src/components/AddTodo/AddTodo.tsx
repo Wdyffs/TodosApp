@@ -25,19 +25,19 @@ const AddTodo = ({ addTodo }: Props) => {
     };
 
     return (
-        <Space direction='vertical' size='middle'>
-            <Space direction='horizontal' size='large'>
-                <Input placeholder="Enter todo text" value={text} onChange={changeText} />
-                <Button type='primary' htmlType='submit' onClick={submit} >
+        <>
+            <Space.Compact direction='horizontal' size='large' style={{width: '100%', marginBottom: '10px', height: '50px'}}>
+                <Input placeholder="Enter todo text" value={text} onChange={changeText} style={{fontSize: '1.2rem'}}/>
+                <Button type='primary' htmlType='submit' onClick={submit} style={{height: '100%'}}>
                     Add todo
                 </Button>
-            </Space>
+            </Space.Compact>
             <div style={{ position: 'relative', height: '30px', textAlign: 'center' }}>
                 {
                     error && <p style={{ color: 'red' }}>Enter todo text</p>
                 }
             </div>
-        </Space>
+        </>
     )
 }
 

@@ -29,18 +29,19 @@ function App() {
   const removeCompleted = () => dispatch({ type: ETodoAction.REMOVE_COMPLETED });
 
   return (
-    <Space direction='vertical' size='middle'>
+    <Space direction='vertical' size='middle' style={{width: '100%'}}>
+      <h1>Manage todos</h1>
       <AddTodo addTodo={addTodo} />
       <TodoList list={todoList} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-      <Space size='large'>
-        <span>{countItemsLeft} items left</span>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '5px', flexWrap: 'wrap'}}>
+        <span style={{marginLeft: '10px'}}>{countItemsLeft} items left</span>
         <Space>
           <Button onClick={setAllFilter} type={state.filter === 'all' ? 'primary' : 'default'}>All</Button>
           <Button onClick={setActiveFilter} type={state.filter === 'active' ? 'primary' : 'default'}>Active</Button>
           <Button onClick={setCompletedFilter} type={state.filter === 'completed' ? 'primary' : 'default'}>Completed</Button>
         </Space>
         <Button onClick={removeCompleted} danger type="primary">Clear completed</Button>
-      </Space>
+      </div>
     </Space>
   )
 }
